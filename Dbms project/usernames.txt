@@ -1,0 +1,31 @@
+
+
+
+1. Show posts of any desired user (can be of the logged in user)   
+2. Retrieve all comments for a particular post			      
+3. Show saved drafts of the logged in user			      
+4. Show all posts from every user (as soon as the user logs in)   
+5. Show created date of a particular post				      
+6. Show published date of a particular post			     
+7. Delete any post (admin privilege)  				       
+8. Delete their post (by the same user)				      
+9. Delete any comment (admin)                                     
+10. Edit post by a user							   
+11. Edit comment by a user						     
+12. Display user with maximum number of posts 			      							
+13. View draft created_date   			                   
+14. Edit Draft content 							      									 
+15. Delete draft									  
+16. Show both post and comment together					  
+17. Delete a comment (by the logged in user)				  
+18. Create a new post								  
+19. Create a new comment on a given post					  
+20. Display posts with a given title (using like)			  
+21. Search a post by a given published date				  
+22. Search posts between a given period of time				  
+23. Display the date on which max posts were published		  
+24. Sorting the posts by published date (ascending or descending)   
+25. Number of posts by a given user					  
+26. Number of drafts by a given user					  
+27. Select post with the maximum number of comments			        
+28. Sort drafts by created date (ascending or descending)		

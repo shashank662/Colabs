@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% for post in draft %}
+
+            {%  if request.user == post.author  %}
+            <div class="container my-5 d-grid gap-5">
+                <div class="p-5 border  alert alert-info ">
+                  <p>
+            <div class="post content">
+                <p class=" text-center " style="font-size:2rem ;" ><strong>{{ post.title }}</strong></p>
+                <p class="date text-center">created: {{ post.created_date|date:'d-m-Y' }}</p>
+                
+                <p class="alert alert-primary">{{ post.text|truncatechars:200 }}</p>
+                <h3><a href="{% url 'post_detail' pk=post.pk %}"><button class ="btn btn-primary d-inline"type="submit">Want to Publish</button></a></h3>
+                <a class="btn btn-danger" href="{% url 'post_remove' pk=post.pk %}"><span class="fa fa-remove"> </span> Delete</a>
+                <hr>
+            </div>
+        </p>
+    </div>    
+</div>
+            {% endif %}
+            
+       
+    {% endfor %}
+    <div class="text-center" style="margin-top: 10px">
+    <a href="{% url 'back'%}"  class="btn btn-info text-center" >Back To Home</a>
+
+    </div>
+
+    <footer class="white-section" id="footer1">
+        <div class="container-fluid">
+          <a href="http://www.facebook.com" i class="social-icon fab fa-facebook-f"></a>
+          <a href="http://www.twitter.com" i class="social-icon fab fa-twitter"></a>
+          <a href="http://www.instagram.com"> <i class=" social-icon fa-brands fa-instagram"></i></a>
+          <p>© Copyright 2023 Colabs</p>
+        </div>
+      </footer>
+
+{% endblock %}
+

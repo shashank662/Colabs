@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+        <h4 class="text-center alert" id="a" >Add New Post</h4>
+        
+
+
+
+    <div class="container-fluid text-center"  style="border: 3px solid gray; width:70%;">
+      <!-- <div class="contact">   -->
+        <h1 class="alert alert-success" > <strong>Author</strong>: {{request.user}}</h1>
+      <div class="row justify-content-center" >
+          <div class="col-md-6">
+            <form action="" method="POST">
+
+                <form method="POST" class="post-form">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-success">Save</button>
+                <a href="{% url 'back'%}"  class="btn btn-info text-center" >Back To Home</a>
+
+                </form>
+          </div>
+        <!-- </div> -->
+      </div>
+      </div>
+
+      <footer class="white-section" id="footer">
+        <div class="container-fluid">
+          <a href="http://www.facebook.com" i class="social-icon fab fa-facebook-f"></a>
+          <a href="http://www.twitter.com" i class="social-icon fab fa-twitter"></a>
+          <a href="http://www.instagram.com"> <i class=" social-icon fa-brands fa-instagram"></i></a>
+          <p>© Copyright 2023 Colabs</p>
+        </div>
+      </footer>
+{% endblock %}

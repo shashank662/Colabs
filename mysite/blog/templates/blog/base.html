@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title >Colabs</title>
+   <!-- CSS only -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+     -->
+
+   <script src="https://kit.fontawesome.com/e291fdc64a.js" crossorigin="anonymous"></script>
+    {# Custom CSS#}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
+
+
+    {# Fonts#}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
+  </head>
+
+  <body style="background-color: #cff4fc;">
+   
+    <section class="colored-section" id="title">
+      
+      <nav class="navbar navbar-expand-lg" style="background-color: #2DCDDF;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'index' %}">Colabs</a>
+          <button class="navbar-toggler " data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color:saddlebrown;"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link nav-link-index " href="{% url 'post_list' %}">Posts</a>
+              </li>
+              <li class="nav-item">
+                <a class=" nav-link nav-link-index" href="{% url 'about' %}">About</a>
+              </li>  
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link nav-link-index " href="{% url 'post_new' %}">New Post</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link-index" href="{% url 'post_draft_list' %}">Drafts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link-index" href="{% url 'contact' %}">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-link-index" href="{% url 'logout' %}">Log out</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  nav-link-index" style="color:white;">Welcome: {{ user.username }}</a>
+              </li>
+              
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link"  href="{% url 'login' %}" aria-label="Login"><span class="fa fa-user" aria-hidden="true"></span></a>
+              </li>
+              {% endif %}
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+</section>
+    
+
+
+  
+
+
+    
+
+
+
+    {# The actual blog posts#}
+          <!-- <div class="content container"> -->
+              <!-- <div class="row">
+                  <div class="col-md-8">
+                    <div class="blog_posts"> -->
+                      {% block content %}
+                     
+                      {% endblock %}
+
+
+    {# SCRIPTS#}
+    <!-- <script type="text/javascript" src="{% static 'js/blog.js' %}"></script> -->
+
+    
+    <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/popper.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  </body>
+</html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html> -->
